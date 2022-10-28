@@ -48,7 +48,7 @@
 '13d' => 'entypo-star', 
 '50d' => 'entypo-air');
 
-		if(array_key_exists($code, $_icones_meteo))
+		if(array_key_exists($code, $_icones_meteo)){
 			return $_icones_meteo[$code];
 		}else{
 			return 'entypo-help';
