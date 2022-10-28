@@ -2,7 +2,7 @@
 
 	include 'inc.twig.php';
 
-	$template_index = $twig->loadTemplate('index.tpl')
+	$template_index = $twig->loadTemplate('index.tpl');
 
 	$n_jours_previsions = 3;
 
