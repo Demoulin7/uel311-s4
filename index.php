@@ -1,6 +1,6 @@
 <?php
 
-	includ 'inc.twig.php';
+	include 'inc.twig.php';
 
 	$template_index = $twig->loadTemplate('index.tpl')
 
