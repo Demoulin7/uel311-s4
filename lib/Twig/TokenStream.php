@@ -88,7 +88,7 @@ class Twig_TokenStream
             throw new Twig_Error_Syntax(sprintf('%sUnexpected token "%s" of value "%s" ("%s" expected%s)',
                 $message ? $message.'. ' : '',
                 Twig_Token::typeToEnglish($token->getType()), $token->getValue(),
-                Twig_Token::typeToEnglish($type), $value ? sprintf((' with value "%s"', $value) : ''),
+                Twig_Token::typeToEnglish($type), $value ? sprintf(' with value "%s"', $value) : ''),
                 $line,
                 $this->filename
             );
@@ -97,6 +97,7 @@ class Twig_TokenStream
 
         return $token;
     }
+
 
     /**
      * Looks at the next token.
