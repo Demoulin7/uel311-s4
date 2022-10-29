@@ -1,5 +1,6 @@
 <?php
 
+	//Recuperation des informations grace a l api
 	include 'inc.twig.php';
 
 	$template_index = $twig->loadTemplate('index.tpl');
@@ -15,6 +16,7 @@
 
 	$data_url = 'http://api.openweathermap.org/data/2.5/forecast/daily?APPID='.$apikey.'&q='.$ville.',fr&lang=fr&units=metric&cnt='.$n_jours_previsions;
 
+	//Extraction et conversion des infos
 	$data_contenu = file_get_contents($data_url);
 		
 	$_data_array = json_decode($data_contenu, true);
@@ -22,6 +24,7 @@
 	$_ville = $_data_array['city']; 
 	$_journees_meteo = $_data_array['list'];
 
+	//Recuperation des images
 	for ($i = 0; $i < count($_journees_meteo); $i++) {
 		$_meteo = getMeteoImage($_journees_meteo[$i]['weather'][0]['icon']);
 		
@@ -34,19 +37,20 @@
 		'n_jours_previsions'=> $n_jours_previsions
 	));
 
+	//Choix de l'image en fonction de la meteo
 	function getMeteoImage($code){
 		if(strpos($code, 'n'))
 			return 'entypo-moon';
 		
 
 		$_icones_meteo =array(
-'01d' => 'entypo-light-up',
-'02d' => 'entypo-light-up','03d' => 'entypo-cloud',
-'04d' => 'entypo-cloud','09d' => 'entypo-water', 
-'10d' => 'entypo-water',
-'11d' => 'entypo-flash',
-'13d' => 'entypo-star', 
-'50d' => 'entypo-air');
+						'01d' => 'entypo-light-up',
+						'02d' => 'entypo-light-up','03d' => 'entypo-cloud',
+						'04d' => 'entypo-cloud','09d' => 'entypo-water', 
+						'10d' => 'entypo-water',
+						'11d' => 'entypo-flash',
+						'13d' => 'entypo-star', 
+						'50d' => 'entypo-air');
 
 		if(array_key_exists($code, $_icones_meteo)){
 			return $_icones_meteo[$code];
