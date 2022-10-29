@@ -67,4 +67,4 @@
 
 	</section>
 </div>
-{{ include('bottom.tpl') }} //changer le incle qui n'existe pas par la commande include, je suppose que sa integre le code d'un autre fichier(ici bottom.tpl)//
+{{ include('bottom.tpl') }} 
