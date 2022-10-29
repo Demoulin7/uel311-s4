@@ -32,7 +32,7 @@
 	    		Voir sur une carte
 	    	</a>
 	    </h1>
-	    {% for journee in _journees_meteo 
+	    {% for journee in _journees_meteo %} //J'ai rajouter un %} apres je connais pas twig//
 	    	<div class="jour">
 	    		<div class="numero_jour">
 	    			<h2>Météo du {{journee.dt|date('d/m/Y')}}</h2>
@@ -67,4 +67,4 @@
 
 	</section>
 </div>
-{{ incle('bottom.tpl') }}
+{{ include('bottom.tpl') }} //changer le incle qui n'existe pas par la commande include, je suppose que sa integre le code d'un autre fichier(ici bottom.tpl)//
