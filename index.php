@@ -19,7 +19,7 @@
 		
 	$_data_array = json_decode($data_contenu, true);
 
-	$_ville = $_data_array['city'];
+	$_ville = $_data_array['city']; 
 	$_journees_meteo = $_data_array['liste'];
 
 	for ($i = 0; $i < count($_journees_meteo); $i++) {
